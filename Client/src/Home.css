@@ -1,0 +1,64 @@
+@import "~antd/dist/antd.css";
+
+.Home {
+  width: 100%;
+  display: block;
+  margin: 0px;
+}
+
+.Products {
+  margin-top: 5px;
+  /* margin: 0px auto; */
+  width: 75%;
+}
+
+.Slider {
+  margin-top: 90px;
+  position: absolute;
+  z-index: 2;
+}
+
+.Slidercontent {
+  width: 350px;
+  float: right;
+}
+
+.Text {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddProductBtn {
+  width: 50px;
+  margin-left: 40px;
+}
+
+.SliderAndSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+  margin-bottom: 60px;
+}
+.Search {
+  z-index: 2;
+}
+
+.ant-slider-tooltip {
+  z-index: 1;
+}
+
+.catBar {
+}
+
+.mainHome {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}

@@ -1,0 +1,31 @@
+Table {
+  margin: 0px auto;
+  width: 85%;
+}
+
+.TableDiv {
+  height: 450px;
+
+  /* overflow: auto; */
+  margin-top: 20px;
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+.MuiTableCell-root {
+  padding: 2px !important;
+}
+
+.MTableHeader-header-13 .MuiTableCell-alignLeft {
+  padding-left: 25px !important;
+}
+.MuiTableCell-alignRight {
+  width: 5px !important;
+  text-align: center !important;
+}
+
+.MuiTableCell-alignLeft {
+  width: 5px !important;
+  text-align: center !important;
+}

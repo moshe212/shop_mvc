@@ -1,0 +1,9 @@
+.TitleTotalOrdersPerDayGraph {
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.recharts-active-dot:hover {
+  cursor: pointer;
+}

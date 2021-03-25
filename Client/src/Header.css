@@ -1,0 +1,61 @@
+.header {
+  width: 100vw;
+  height: 160px;
+  background-color: #e06da5;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.logo {
+  margin-left: 50%;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
+}
+
+.Menu div {
+  margin-left: 140px;
+  margin-top: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.Menu div:hover {
+  border-top: 4px solid #ffba26;
+  color: green;
+  margin-top: 30px;
+  cursor: pointer;
+  padding-top: 8px;
+}
+
+.AdinAndLogoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3%;
+}
+
+.AdinAndLogoDiv :hover {
+  cursor: pointer;
+}
+
+.Active {
+  border-bottom: 4px solid #ffba26;
+  color: green !important;
+  /* margin-bottom: 5px; */
+  padding-bottom: 3px;
+}
+
+.tagIcon {
+  margin-right: 30px;
+}

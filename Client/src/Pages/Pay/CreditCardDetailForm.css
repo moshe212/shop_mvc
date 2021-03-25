@@ -1,0 +1,140 @@
+.RootPayForm {
+  margin-top: 20px;
+  position: relative;
+}
+
+.PayForm {
+  margin-top: 20px;
+}
+
+.TotalPay_Form {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(
+    to top right,
+    #bece39 60%,
+    gray 75%,
+    white 75%,
+    white 100%
+  );
+  /* padding-top: 80px; */
+  position: relative;
+  border-radius: 100%;
+  text-align: center;
+  font: bold 20px helvetica;
+  box-shadow: 0 0 0 1px smokewhite;
+  right: 82%;
+  margin-top: -11%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.TotalPay_Form:before {
+  content: "";
+  position: absolute;
+  top: -44px;
+  left: 45px;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(
+    to bottom left,
+    transparent 75%,
+    #e06da5 75%,
+    #e06da5 100%
+  );
+  border-radius: 100%;
+}
+
+.SmallIcon {
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 6%;
+}
+
+.Isr {
+  width: 100px;
+  height: 60px;
+  margin: 10px;
+}
+
+.Visa {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.MC {
+  width: 80px;
+  height: 60px;
+  margin: 10px;
+}
+
+.Leumi {
+  width: 80px;
+  height: 60px;
+  margin: 10px;
+}
+
+.CreditCarrdImgs {
+  margin-top: 20px;
+}
+
+.Mod {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.ModError {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.ModErrorFields {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white !important;
+}
+
+.react-modal {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.react-modal-body {
+  background-color: transparent !important;
+}
+
+.modalTxt {
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.bounceInRight-enter-done {
+  width: 500px;
+}
+
+.modalTxtErrorFields {
+  background-color: white !important;
+  margin-top: 40px;
+  margin-right: 30px;
+  width: 400px;
+  height: 80px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.modalTxtErrorFields div {
+  padding: 30px;
+}
