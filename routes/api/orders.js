@@ -16,7 +16,7 @@ const User = require("../../models/User");
 // const User = mongoose.model("User");
 
 //הוספת הזמנה-- Mongo
-router.post("/api/orders/AddOrder", async (req, res) => {
+router.post("/orders/AddOrder", async (req, res) => {
   console.log(req.body);
   const title = req.body.title;
   const image = req.body.image;
@@ -36,7 +36,7 @@ router.post("/api/orders/AddOrder", async (req, res) => {
   });
 });
 
-router.post("/api/orders/GetOpenOrderForCustomer", async (req, res) => {
+router.post("/orders/GetOpenOrderForCustomer", async (req, res) => {
   const { CustomerID } = req.body;
 
   const Orderitem = await Order.findOne({
@@ -65,7 +65,7 @@ router.post("/api/orders/GetOpenOrderForCustomer", async (req, res) => {
 });
 
 //הוספת מוצר לעגלה
-router.post("/api/orders/AddToCart", async (req, res) => {
+router.post("/orders/AddToCart", async (req, res) => {
   // console.log(req.query);
   console.log(req.body);
   const ProductId = req.body.ProductID;
@@ -259,7 +259,7 @@ router.post("/api/orders/AddToCart", async (req, res) => {
   // io.emit("UpdateQuantity", { id: productId, quantity: Quantity });
 });
 
-router.post("/api/orders/OrderPay", async (req, res) => {
+router.post("/orders/OrderPay", async (req, res) => {
   console.log(req.body);
   const CustomerID = req.body.CustomerID;
   const Orderitem = Order.findOne(
@@ -279,7 +279,7 @@ router.post("/api/orders/OrderPay", async (req, res) => {
 // -----------------------ניהול------------------------------
 
 //החזרת כל ההזמנות או לפי חיפוש אם יש חיפוש == Mongo
-router.get("/api/orders", async (req, res) => {
+router.get("/orders", async (req, res) => {
   console.log("QUERY:", req.query);
   const search = req.query.search;
   console.log(search);
@@ -336,7 +336,7 @@ router.get("/api/orders", async (req, res) => {
 });
 
 //החזרת לקוחות לפי ביצוע הזמנות לפי תאריך
-router.get("/api/orders/orders_customers", async (req, res) => {
+router.get("/orders/orders_customers", async (req, res) => {
   const search = req.query.search.replace("'", "");
   const month = search.split("-")[1].replace("'", "");
   const year = search.split("-")[0];
@@ -381,7 +381,7 @@ router.get("/api/orders/orders_customers", async (req, res) => {
 });
 
 //החזרת כמות הזמנות לפי תאריך
-router.get("/api/orders/dates", async (req, res) => {
+router.get("/orders/dates", async (req, res) => {
   console.log("here");
   const search = req.query.search;
   const OrdersCount = await Order.aggregate([
@@ -401,7 +401,7 @@ router.get("/api/orders/dates", async (req, res) => {
 });
 
 //החזרת סהכ הכנסות לחודש
-router.get("/api/orders/total_income", async (req, res) => {
+router.get("/orders/total_income", async (req, res) => {
   const search = req.query.search;
   const OrdersTotalIncome = await Order.aggregate([
     {
@@ -425,7 +425,7 @@ router.get("/api/orders/total_income", async (req, res) => {
 });
 
 //פרטי עגלה ללקוח - ניהול
-router.post("/api/orders/GetOrderForCustomer_Admin", async (req, res) => {
+router.post("/orders/GetOrderForCustomer_Admin", async (req, res) => {
   const { OrderID } = req.body;
 
   const Orderitem = await Order.findOne({
@@ -453,7 +453,7 @@ router.post("/api/orders/GetOrderForCustomer_Admin", async (req, res) => {
 });
 
 //מחיקת הזמנה - ניהול == Mongo
-router.delete("/api/orders/:id", async (req, res) => {
+router.delete("/orders/:id", async (req, res) => {
   const orderId = req.params.id;
   console.log(req.params.id);
   Order.findByIdAndDelete(orderId, (err, order) => {
@@ -470,7 +470,7 @@ router.delete("/api/orders/:id", async (req, res) => {
 });
 
 // עדכון הזמנה - ניהול == Mongo
-router.put("/api/orders/:id", async (req, res) => {
+router.put("/orders/:id", async (req, res) => {
   const orderId = req.params.id;
   console.log(req.body);
 
@@ -493,7 +493,7 @@ router.put("/api/orders/:id", async (req, res) => {
 });
 
 //טבלת ניהול לקוחות
-router.post("/api/orders/GetClients_Admin", async (req, res) => {
+router.post("/orders/GetClients_Admin", async (req, res) => {
   console.log("req.body", req.body);
   // const limitRows = req.body.limit;
   const Clients = await Customer.find((err, customerItems) => {

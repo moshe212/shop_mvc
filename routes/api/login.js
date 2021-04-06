@@ -17,7 +17,7 @@ const User = require("../../models/User");
 // const User = mongoose.model("User");
 
 // כניסת מנהל == Mongo
-router.post("/api/login/LogInAdmin", (req, res) => {
+router.post("/login/LogInAdmin", (req, res) => {
   console.log(req.body);
   const { Email, Pass } = req.body;
   console.log(Email, Pass);
@@ -39,7 +39,7 @@ router.post("/api/login/LogInAdmin", (req, res) => {
 });
 
 // כניסת לקוח == Mongo
-router.post("/api/login/LogInCustomer", async (req, res) => {
+router.post("/login/LogInCustomer", async (req, res) => {
   console.log(req.body);
   const { Email, Pass, TempCart } = req.body;
   console.log(Email, Pass);
@@ -265,7 +265,7 @@ router.post("/api/login/LogInCustomer", async (req, res) => {
 });
 
 //רישום לקוח
-router.post("/api/login/RegisterCustomer", async (req, res) => {
+router.post("/login/RegisterCustomer", async (req, res) => {
   console.log(req.body);
   const {
     Email,

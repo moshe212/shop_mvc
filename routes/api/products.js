@@ -17,7 +17,7 @@ const User = require("../../models/User");
 // const User = mongoose.model("User");
 
 //החזרת כל המוצרים או לפי חיפוש אם יש חיפוש == Mongo
-router.get("/api/products", async (req, res) => {
+router.get("/products", async (req, res) => {
   console.log("QUERY:", req.query);
   const search = req.query.search;
   const categoryName = req.query.category;
@@ -91,7 +91,7 @@ router.get("/api/products", async (req, res) => {
 
 //----------------------ניהול--------------------------------------------------------
 
-router.get("/api/products/Admin/ManageProducts", (req, res) => {
+router.get("/products/Admin/ManageProducts", (req, res) => {
   console.log("QUERY:", req.query);
 
   fs.readFile("product.json", (err, data) => {
@@ -114,7 +114,7 @@ router.get("/api/products/Admin/ManageProducts", (req, res) => {
 });
 
 // הוספת מוצר == Mongo
-router.post("/api/products", async (req, res) => {
+router.post("/products", async (req, res) => {
   console.log(req.body);
   const title = req.body.title;
   const image = req.body.image;
@@ -135,7 +135,7 @@ router.post("/api/products", async (req, res) => {
 });
 
 //מחיקת מוצר == Mongo
-router.delete("/api/products/:id", async (req, res) => {
+router.delete("/products/:id", async (req, res) => {
   const productId = req.params.id;
   console.log(productId);
   Product.findByIdAndDelete(productId, (err, prod) => {
@@ -152,7 +152,7 @@ router.delete("/api/products/:id", async (req, res) => {
 });
 
 // עדכון מוצר == Mongo
-router.put("/api/products/:id", async (req, res) => {
+router.put("/products/:id", async (req, res) => {
   const productId = req.params.id;
   console.log(productId);
 
@@ -175,7 +175,7 @@ router.put("/api/products/:id", async (req, res) => {
 });
 
 // הורדת קובץ מבנה לקבלת קובץ רשימת מוצרים להעלאה
-router.get("/api/products/download/:file(*)", function (req, res) {
+router.get("/products/download/:file(*)", function (req, res) {
   // const file = "Test.txt";
   const file = req.params.file;
   const fileLocation = path.join("./", file);
@@ -184,7 +184,7 @@ router.get("/api/products/download/:file(*)", function (req, res) {
 });
 
 // הוספת מוצרים מקובץ Csv == Mongo
-router.post("/api/products/upload", async (req, res) => {
+router.post("/products/upload", async (req, res) => {
   console.log("upload", req.query.filename);
   let dir = "productList/";
 
@@ -232,7 +232,7 @@ router.post("/api/products/upload", async (req, res) => {
 });
 
 // הוספת מוצר עם קובץ להעלאה עבור תמונה == Mongo
-router.post("/api/products/AddProductWithImgFile", (req, res) => {
+router.post("/products/AddProductWithImgFile", (req, res) => {
   console.log(req.query);
   console.log(req.body);
   req.pipe(
@@ -259,7 +259,7 @@ router.post("/api/products/AddProductWithImgFile", (req, res) => {
 });
 
 // עדכון מוצר עם אפשרות להעלאת תמונה כקובץ == Mongo
-router.put("/api/products/UpdateProduct", async (req, res) => {
+router.put("/products/UpdateProduct", async (req, res) => {
   console.log(req.query);
   console.log(req.body);
   if (req.query.filename.length > 0) {
